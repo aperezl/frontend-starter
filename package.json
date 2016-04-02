@@ -1,0 +1,23 @@
+{
+  "name": "german-started",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "css": "node-sass -o dist/css src/scss/*",
+    "html": "cp src/index.html dist.html",
+    "watch:css": "onchange src/scss/*.scss -- npm run css",
+    "watch:html": "onchange src/*.html -- npm run html",
+    "serve": "browser-sync start --server dist --files dist",
+    "dev": "parallelshell 'npm run watch:css' 'npm run watch:html' 'npm run serve'"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "mkdirp": "^0.5.1",
+    "node-sass": "^3.4.2",
+    "onchange": "^2.2.0",
+    "parallelshell": "^2.0.0"
+  }
+}
